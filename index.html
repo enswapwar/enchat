@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>みかんのちゃっと！</title>
+  <link rel="stylesheet" href="/programfile/style.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="left-controls">
+      <button id="clear-logs">ログ削除</button>
+    </div>
+      <!-- ① 接続者一覧ウィンドウ -->
+  <div id="users-window" class="resizable-window">
+    <h3>接続中のユーザー</h3>
+    <ul id="users-list"></ul>
+  </div>
+
+  <!-- ② 名前色選択ウィンドウ -->
+  <div id="color-window" class="resizable-window">
+    <h3>メッセージの色を選ぶ</h3>
+    <input type="color" id="name-color-picker" value="#000000">
+  </div>
+  <!-- 管理者認証OKの通知 -->
+  <div id="admin-notice" class="hidden">✅ 管理者認証に成功しました(やったね！)</div>
+    <div class="right-controls">
+      <input type="password" id="admin-pass" placeholder="管理者パスワード"/>
+    </div>
+  </header>
+
+  <main id="chat-log">
+    <p class="message">使い方　名前を入力しメッセージを入力すると送信できる。<br>会話は保存されずログ削除を押すと自分の画面だけ会話を消すことができる。</p>
+  </main>
+<footer class="bottom-bar">
+  <input type="text" id="name-input" placeholder="名前を入力..." />
+  <input type="text" id="chat-input" placeholder="メッセージを入力..." />
+  <button id="send-btn">送信</button>
+</footer>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/programfile/main.js"></script>
+</body>
+</html>
